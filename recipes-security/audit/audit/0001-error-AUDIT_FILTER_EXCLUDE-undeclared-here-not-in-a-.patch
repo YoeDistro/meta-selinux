@@ -1,0 +1,31 @@
+From e045682b7d637710bc78fe245517af0455aba2cd Mon Sep 17 00:00:00 2001
+From: Hitendra Prajapati <hprajapati@mvista.com>
+Date: Mon, 22 Nov 2021 10:25:15 +0530
+Subject: [PATCH] audit: AUDIT_FILTER_EXCLUDE undeclared here (not in a
+ function)
+
+Upstream-Status: Backport from https://bugs.gentoo.org/669532
+Signed-off-by: Hitendra Prajapati <hprajapati@mvista.com>
+---
+ lib/libaudit.h | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/lib/libaudit.h b/lib/libaudit.h
+index e5c7a4d..e1cd691 100644
+--- a/lib/libaudit.h
++++ b/lib/libaudit.h
+@@ -277,7 +277,11 @@ extern "C" {
+ #define AUDIT_KEY_SEPARATOR 0x01
+ 
+ /* These are used in filter control */
+-#define AUDIT_FILTER_EXCLUDE	AUDIT_FILTER_TYPE
++
++#ifndef AUDIT_FILTER_EXCLUDE
++#define AUDIT_FILTER_EXCLUDE    AUDIT_FILTER_TYPE
++#endif
++
+ #define AUDIT_FILTER_MASK	0x07	/* Mask to get actual filter */
+ #define AUDIT_FILTER_UNSET	0x80	/* This value means filter is unset */
+ 
+-- 
+2.25.1

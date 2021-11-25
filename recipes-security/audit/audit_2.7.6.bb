@@ -7,6 +7,7 @@ SECTION = "base"
 LICENSE = "GPLv2+ & LGPLv2+"
 LIC_FILES_CHKSUM = "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f"
 
+PR .= "1"
 SRC_URI = "http://people.redhat.com/sgrubb/${BPN}/${BPN}-${PV}.tar.gz \
            file://audit-python-configure.patch \
            file://audit-python.patch \
@@ -14,6 +15,7 @@ SRC_URI = "http://people.redhat.com/sgrubb/${BPN}/${BPN}-${PV}.tar.gz \
            file://auditd \
            file://auditd.service \
            file://audit-volatile.conf \
+           file://0001-error-AUDIT_FILTER_EXCLUDE-undeclared-here-not-in-a-.patch \
 "
 SRC_URI[md5sum] = "55a81bbed973b58a90590c949e71dc3e"
 SRC_URI[sha256sum] = "fa65289cffdc95a25bfbdba541f43ee1b12c707090a38fd027dcf9354b9014e7"
