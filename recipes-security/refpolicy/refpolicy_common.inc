@@ -80,6 +80,8 @@ SRC_URI += " \
         file://0062-policy-modules-multiple-filetrans-run_machine_id-etc.patch \
         file://0063-policy-modules-system-locallogin-dontaudit-sulogin_t.patch \
         file://0064-policy-modules-system-locallogin-allow-sulogin_t-unc.patch \
+        file://0065-policy-modules-system-locallogin-allow-sulogin_t-use.patch \
+        file://0066-policy-modules-services-oddjob-allow-oddjob_mkhomedi.patch \
         "
 
 S = "${WORKDIR}/refpolicy"
